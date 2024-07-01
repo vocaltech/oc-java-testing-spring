@@ -1,19 +1,17 @@
 package com.openclassrooms.testing.calcul.controller;
 
-import javax.inject.Inject;
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.openclassrooms.testing.calcul.domain.model.Calculation;
+import com.openclassrooms.testing.calcul.domain.model.CalculationModel;
+import com.openclassrooms.testing.calcul.domain.model.CalculationType;
+import com.openclassrooms.testing.calcul.service.CalculatorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.openclassrooms.testing.calcul.domain.model.Calculation;
-import com.openclassrooms.testing.calcul.domain.model.CalculationModel;
-import com.openclassrooms.testing.calcul.domain.model.CalculationType;
-import com.openclassrooms.testing.calcul.service.CalculatorService;
+import javax.inject.Inject;
+import javax.validation.Valid;
 
 @Controller
 public class CalculatorController {
