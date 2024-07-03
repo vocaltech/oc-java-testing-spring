@@ -1,5 +1,6 @@
 package com.openclassrooms.testing.calcul.e2e;
 
+import com.openclassrooms.testing.calcul.e2e.page.CalculatorPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -66,6 +67,18 @@ class StudentMultiplicationJourneyE2ETest {
         );
 
         String solution = solutionElement.getText();
+        assertThat(solution).isEqualTo("32");
+    }
+    @Test
+    void aStudentUsesTheCalculatorToMultiplyTwoBySixteen_withPageObject() {
+        // GIVEN
+        webDriver.get(baseUrl);
+        final CalculatorPage calculatorPage = new CalculatorPage(webDriver);
+
+        // WHEN
+        final String solution = calculatorPage.multiply("2", "16");
+
+        // THEN
         assertThat(solution).isEqualTo("32");
     }
 }
